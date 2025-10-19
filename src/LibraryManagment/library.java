@@ -47,7 +47,7 @@ public class library {
         this.availableCopies = availableCopies;
     }
 
-    public library(String title, String author, String isbn, int totalCopies, int availableCopies) {
+    public library(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
