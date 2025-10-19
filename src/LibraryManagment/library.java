@@ -86,7 +86,7 @@ public class library {
         System.out.println("Available copies" + ":" + availableCopies);
     }
 
-    public static void libraryRools() {
+    public static void libraryRules() {
         System.out.println("Max 3 books can be borrowed per person.");
     }
 
