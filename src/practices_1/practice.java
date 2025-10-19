@@ -1,6 +1,6 @@
-package practices;
+package practices_1;
 
-public class practice_1 {
+public class practice {
     //    public static void main(String[] args) {
 //        int a = 5;
 //        int b = 6;
