@@ -1,6 +1,6 @@
 package LibraryManagment;
 
-public class library {
+public class Library {
     private String title;
     private String author;
     private String isbn;
@@ -47,7 +47,7 @@ public class library {
         this.availableCopies = availableCopies;
     }
 
-    public library(String title, String author, String isbn) {
+    public Library(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;

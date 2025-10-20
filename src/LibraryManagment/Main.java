@@ -1,13 +1,13 @@
 package LibraryManagment;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
-        library library = new library("Clean Code", "Robert C.Martin", "12345678");
+        Library library = new Library("Clean Code", "Robert C.Martin", "12345678");
 
         library.printInfo();
         library.borrowBook();
         library.returnBook();
-        library.libraryRules();
+        Library.libraryRules();
         library.bookType();
 
     }
