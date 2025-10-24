@@ -21,6 +21,6 @@ public class Scooter implements Transport {
 
     @Override
     public String getTransportInfo() {
-         return "scooter" + "-" + priceIsKm + "manat" + speed + "km/h";
+        return "scooter" + "-" + priceIsKm + " " + "manat" + " " + speed + "km/h";
     }
 }

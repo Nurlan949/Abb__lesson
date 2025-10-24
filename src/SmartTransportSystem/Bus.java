@@ -21,6 +21,6 @@ public class Bus implements Transport {
 
     @Override
     public String getTransportInfo() {
-        return "Bus" + "-" + priceIsKm + "manat" + speed + "km/h";
+        return "Bus" + "-" + priceIsKm + " " + "manat" + " " + speed + "km/h";
     }
 }

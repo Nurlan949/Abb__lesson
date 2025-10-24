@@ -21,6 +21,6 @@ public class Bicycle implements Transport {
 
     @Override
     public String getTransportInfo() {
-         return "Bicyle" + "-" + priceIsKm + "manat" + speed + "km/h";
+         return "Bicyle"  + "-" + priceIsKm + " " + "manat" + " " + speed + "km/h";
     }
 }
