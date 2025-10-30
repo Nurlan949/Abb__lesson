@@ -1,4 +1,4 @@
-package SmartTransportSystem;
+package smartTransportSystem;
 
 public class Bus implements Transport {
     private final double priceIsKm = 0.6;

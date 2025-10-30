@@ -1,4 +1,4 @@
-package SmartTransportSystem;
+package smartTransportSystem;
 
 public class Taxi implements Transport {
     private final double priceIsKm = 2.0;

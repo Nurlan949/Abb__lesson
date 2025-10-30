@@ -1,4 +1,4 @@
-package SmartTransportSystem;
+package smartTransportSystem;
 
 import java.util.Scanner;
 

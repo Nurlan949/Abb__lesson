@@ -1,4 +1,4 @@
-package SmartTransportSystem;
+package smartTransportSystem;
 
 public interface Transport {
     double calculateFare(double distance);

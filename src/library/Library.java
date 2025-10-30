@@ -1,4 +1,4 @@
-package LibraryManagment;
+package library;
 
 public class Library {
     private String title;

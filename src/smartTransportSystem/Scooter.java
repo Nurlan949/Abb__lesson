@@ -1,8 +1,8 @@
-package SmartTransportSystem;
+package smartTransportSystem;
 
-public class Bicycle implements Transport {
-    private final double priceIsKm = 0.2;
-    private final double speed = 15;
+public class Scooter implements Transport {
+    private final double priceIsKm = 0.3;
+    private final double speed = 25;
 
     @Override
     public double calculateFare(double distance) {
@@ -21,6 +21,6 @@ public class Bicycle implements Transport {
 
     @Override
     public String getTransportInfo() {
-         return "Bicyle"  + "-" + priceIsKm + " " + "manat" + " " + speed + "km/h";
+        return "scooter" + "-" + priceIsKm + " " + "manat" + " " + speed + "km/h";
     }
 }
