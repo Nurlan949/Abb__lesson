@@ -16,5 +16,6 @@ public class Main {
         fictionSection.displayBooks();
         historySection.displayBooks();
         library.filterBooks(book -> book.getYear() > 2015);
+        library.filterBooks(book -> book1.getYear() < 2010);
     }
 }

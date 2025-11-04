@@ -3,6 +3,7 @@ import practices_1.Dog;
 import practices_1.practice_3.DaysOfWeek;
 import practices_1.practice_3.MethodOverloading;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
