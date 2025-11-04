@@ -2,7 +2,7 @@ package bus_simulation;
 
 import java.util.*;
 
-public class BusSimulation {///
+public class BusSimulation {//
     public static void main(String[] args) {//
         Random random = new Random();
         List<Queue<Passenger>> stop = new ArrayList<>();
@@ -36,6 +36,7 @@ public class BusSimulation {///
             }
             System.out.println("simulation finish");
             System.out.println("final passenger"+bus);
+
         }
 
 
