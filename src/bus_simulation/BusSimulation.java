@@ -3,7 +3,7 @@ package bus_simulation;
 import java.util.*;
 
 public class BusSimulation {
-    public static void main(String[] args) {
+    public static void main(String[] args) {//
         Random random = new Random();
         List<Queue<Passenger>> stop = new ArrayList<>();
         List<Passenger> bus = new ArrayList<>();
