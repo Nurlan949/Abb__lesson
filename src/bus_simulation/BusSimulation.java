@@ -8,6 +8,7 @@ public class BusSimulation {//
         List<Queue<Passenger>> stop = new ArrayList<>();
         List<Passenger> bus = new ArrayList<>();
         for (int i = 1; i <= 3; i++) {
+
             Queue<Passenger> passengerQueue = new LinkedList<>();
             for (int j = 1; j <= random.nextInt(3) + 3; j++)
                 passengerQueue.add(new Passenger("randomName" + i + "p" + j, random.nextBoolean()));
