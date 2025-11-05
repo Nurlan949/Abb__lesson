@@ -5,18 +5,14 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class CarRentalSystem implements CarRentalSystemImpl {
-    private Set<Car> carSet = new HashSet<>();
-    private Map<Customer, Car> customerCarMap = new HashMap<>();
-    private Map<Car, LocalDateTime> carLocalDateTimeMap = new HashMap<>();
-    private Set<Car> cars = new HashSet<>();
-    private Map<Car, LocalDateTime> localDateTimeCars = new HashMap<>();
-    private List<String> rentalHistory = new ArrayList<>();
+    Set<Car> carSet = new HashSet<>();
+    Map<Customer, Car> customerCarMap = new HashMap<>();
+    Map<Car, LocalDateTime> carLocalDateTimeMap = new HashMap<>();
+    Set<Car> cars = new HashSet<>();
+    Map<Car, LocalDateTime> localDateTimeCars = new HashMap<>();
+    List<String> rentalHistory = new ArrayList<>();
 
-    @Override
-    public void addCar(Car car) {
-        carSet.add(car);
-        cars.add(car);
-    }
+
 
     @Override
     public void rentCar(Customer c, Car car) {
@@ -45,11 +41,11 @@ public class CarRentalSystem implements CarRentalSystemImpl {
         carSet.add(car);
         customerCarMap.remove(c);
         carLocalDateTimeMap.remove(car);
-        String historyEntry =  car.getBrand() + " " + car.getModel() +
-                "Rent" +" "+ c.getName() +
-                "From"+" " + rentTime +
-                "To" +" "+ returnTime +
-                "Duration" +" "+ day + "day " + remaining + " hours";
+        String historyEntry = car.getBrand() + " " + car.getModel() +
+                "Rent" + " " + c.getName() +
+                "From" + " " + rentTime +
+                "To" + " " + returnTime +
+                "Duration" + " " + day + "day " + remaining + " hours";
         rentalHistory.add(historyEntry);
 
         System.out.println(c.getName() + ":" + "adli muster" + "-" + car.getBrand() + ":" + "bu masini iade etdi");
@@ -83,12 +79,13 @@ public class CarRentalSystem implements CarRentalSystemImpl {
 
     @Override
     public void printRentalHistory() {
-        if (rentalHistory.isEmpty()){
+        if (rentalHistory.isEmpty()) {
             System.out.println("hec bir tarix yoxdur");
-        }else {
-            for (String record:rentalHistory){
+        } else {
+            for (String record : rentalHistory) {
                 System.out.println(record);
             }
 
-        }    }
+        }
+    }
 }
