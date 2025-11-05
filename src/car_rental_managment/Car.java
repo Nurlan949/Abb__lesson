@@ -10,6 +10,7 @@ public class Car {
     private Integer year;
     private CarEnum carEnum;
 
+
     public CarEnum getCarEnum() {
         return carEnum;
     }

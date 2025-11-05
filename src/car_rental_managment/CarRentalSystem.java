@@ -1,17 +1,22 @@
 package car_rental_managment;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class CarRentalSystem implements CarRentalSystemImpl {
-    Set<Car> carSet = new HashSet<>();
-    Map<Customer, Car> customerCarMap = new HashMap<>();
-    Map<Car, LocalDateTime> carLocalDateTimeMap = new HashMap<>();
-    Set<Car> cars = new HashSet<>();
-    Map<Car, LocalDateTime> localDateTimeCars = new HashMap<>();
+    private Set<Car> carSet = new HashSet<>();
+    private Map<Customer, Car> customerCarMap = new HashMap<>();
+    private Map<Car, LocalDateTime> carLocalDateTimeMap = new HashMap<>();
+    private Set<Car> cars = new HashSet<>();
+    private Map<Car, LocalDateTime> localDateTimeCars = new HashMap<>();
+    private List<String> rentalHistory = new ArrayList<>();
+
+    @Override
+    public void addCar(Car car) {
+        carSet.add(car);
+        cars.add(car);
+    }
 
     @Override
     public void rentCar(Customer c, Car car) {
@@ -19,7 +24,7 @@ public class CarRentalSystem implements CarRentalSystemImpl {
             customerCarMap.put(c, car);
             carLocalDateTimeMap.put(car, LocalDateTime.now());
             car.setCarEnum(CarEnum.RENTED);
-            System.out.println(c.getName() + ":" + "adli musteri" +"-"+ car.getBrand() + ":" + "bu masini kirayeledi");
+            System.out.println(c.getName() + ":" + "adli musteri" + "-" + car.getBrand() + ":" + "bu masini kirayeledi");
         } else if (car.getCarEnum() == CarEnum.RENTED) {
             System.out.println("kirayelenib");
         } else {
@@ -31,13 +36,23 @@ public class CarRentalSystem implements CarRentalSystemImpl {
     public void returnCar(Customer c) {
         Car car = customerCarMap.get(c);
         LocalDateTime rentTime = carLocalDateTimeMap.get(car);
-        LocalDateTime returnTime = LocalDateTime.now();
+        LocalDateTime returnTime = rentTime.plusHours(50).plusMinutes(150);
+        Duration duration = Duration.between(rentTime, returnTime);
+        Long hours = duration.toHours();
+        Long day = hours / 24;
+        Long remaining = hours % 24;
         car.setCarEnum(CarEnum.AVAILABLE);
         carSet.add(car);
         customerCarMap.remove(c);
         carLocalDateTimeMap.remove(car);
+        String historyEntry =  car.getBrand() + " " + car.getModel() +
+                "Rent" +" "+ c.getName() +
+                "From"+" " + rentTime +
+                "To" +" "+ returnTime +
+                "Duration" +" "+ day + "day " + remaining + " hours";
+        rentalHistory.add(historyEntry);
 
-        System.out.println(c.getName() + ":" + "adli muster" +"-"+ car.getBrand() + ":" + "bu masini iade etdi");
+        System.out.println(c.getName() + ":" + "adli muster" + "-" + car.getBrand() + ":" + "bu masini iade etdi");
     }
 
     @Override
@@ -68,16 +83,12 @@ public class CarRentalSystem implements CarRentalSystemImpl {
 
     @Override
     public void printRentalHistory() {
-        boolean findHistory = false;
-        for (Car car : carSet) {
-            if (car.getCarEnum() == CarEnum.AVAILABLE) {
-                System.out.println(car.getBrand() + ":" + car.getModel() +"-"+ "bosdur");
-                findHistory = true;
-            } else {
-                System.out.println("hec bir tarix yoxdur");
+        if (rentalHistory.isEmpty()){
+            System.out.println("hec bir tarix yoxdur");
+        }else {
+            for (String record:rentalHistory){
+                System.out.println(record);
             }
 
-
-        }
-    }
+        }    }
 }
