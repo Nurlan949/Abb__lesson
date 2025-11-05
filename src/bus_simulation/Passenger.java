@@ -30,4 +30,5 @@ public class Passenger {
         return "Passenger{" +
                 "name='" + name + (isPriority ? "(PRIORITY)" : "");
     }
+    
 }

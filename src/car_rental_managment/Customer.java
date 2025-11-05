@@ -1,0 +1,58 @@
+package car_rental_managment;
+
+import java.util.Objects;
+
+public class Customer {
+    private Long id;
+    private String name;
+    private String licenseNumber;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLicenseNumber() {
+        return licenseNumber;
+    }
+
+    public void setLicenseNumber(String licenseNumber) {
+        this.licenseNumber = licenseNumber;
+    }
+
+    public Customer(Long id, String name, String licenseNumber) {
+        this.id = id;
+        this.name = name;
+        this.licenseNumber = licenseNumber;
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(id, customer.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" + "id=" + id + ", name='" + name + '\'' + ", licenseNumber=" + licenseNumber + '}';
+    }
+}
