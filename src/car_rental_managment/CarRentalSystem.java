@@ -12,8 +12,6 @@ public class CarRentalSystem implements CarRentalSystemImpl {
     Map<Car, LocalDateTime> localDateTimeCars = new HashMap<>();
     List<String> rentalHistory = new ArrayList<>();
 
-
-
     @Override
     public void rentCar(Customer c, Car car) {
         if (car.getCarEnum() == CarEnum.AVAILABLE) {
