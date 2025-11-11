@@ -51,7 +51,7 @@ public class LibraryService {
         if (mostReadAuthor.isEmpty()) {
             return Optional.empty();
         }
-        String author = mostReadAuthor.get();
+        var author = mostReadAuthor.get();
         return books.stream().filter(b -> b.getAuthor().equals(author))
                 .filter(b -> b.isAvailable())
                 .max(Comparator.comparing(Book::getRaiting));
