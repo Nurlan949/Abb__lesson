@@ -1,4 +1,4 @@
-package practices_1.taask5;
+package practices_1.task5;
 
 import java.util.List;
 import java.util.stream.Collectors;
