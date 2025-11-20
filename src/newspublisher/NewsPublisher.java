@@ -11,10 +11,13 @@ public class NewsPublisher {
         subscribers.add(subscriber);
 
     }
-    public synchronized void publishNews(String news) {
-            this.lastNews = news;
-            System.out.println("Yeni xəbər yayımlandı" + news);
-            notifyAll();
+    public void publishNews(String news) {
+            synchronized (this){
+                this.lastNews=news;
+                System.out.println("Yeni xəbər yayımlandı"+":" + news);
+                notifyAll();
+            }
+
 
     }
 

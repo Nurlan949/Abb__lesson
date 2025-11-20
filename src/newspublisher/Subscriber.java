@@ -13,7 +13,7 @@ public class Subscriber extends Thread {
 
     public synchronized void update(String news) {
         try {
-            System.out.println(name+"xəbər aldı:"+news);
+            System.out.println(name+"="+"xəbər aldı:"+news);
             Thread.sleep(900);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

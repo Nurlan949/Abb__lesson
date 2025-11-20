@@ -17,7 +17,7 @@ public class Main {
         int count = 1;
         while (true) {
             synchronized (this) {
-                String news="Xber"+count++;
+                String news="Xeber"+count++;
                 publisher.publishNews(news);
             }
             try {
